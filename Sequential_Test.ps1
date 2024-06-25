@@ -1,4 +1,5 @@
 $Output= @()
+$Time= @()
 $names = Get-content "servers.txt"
 
 for ($i = 0;  $i -lt 1; $i++){# Make sure loop starts from 0 and goes to number of trials.
@@ -7,6 +8,9 @@ for ($i = 0;  $i -lt 1; $i++){# Make sure loop starts from 0 and goes to number 
 	foreach ($name in $names){ #loop down the list of servers
 
 		$obj = Test-Connection -Count 1 -Delay 1 -BufferSize 1500 -ComputerName $name -ErrorAction SilentlyContinue
+
+$Time+= (Get-Date -UFormat %s -Millisecond 0)
+Write-Host (Get-Date -UFormat %s -Millisecond 0)
 
 		if($obj){
    			$Output+= ($obj | Select -ExpandProperty "Responsetime")
@@ -20,4 +24,5 @@ for ($i = 0;  $i -lt 1; $i++){# Make sure loop starts from 0 and goes to number 
 	}
 }
 $Output | Out-file "result.csv"
+$Time | Out-file "time.csv"
 Pause

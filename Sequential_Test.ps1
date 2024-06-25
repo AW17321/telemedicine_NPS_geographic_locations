@@ -2,7 +2,7 @@ $Output= @()
 $Time= @()
 $names = Get-content "servers.txt"
 
-for ($i = 0;  $i -lt 1; $i++){# Make sure loop starts from 0 and goes to number of trials.
+for ($i = 0;  $i -lt 750; $i++){# Make sure loop starts from 0 and goes to number of trials.
 	#Write-Host $i #debug, write number of loop on terminal
 	#Write-Host (Get-Date).ToString('MM/dd/yyyy hh:mm:ss tt') #time per loop
 	foreach ($name in $names){ #loop down the list of servers

@@ -6,7 +6,7 @@ for ($i = 0;  $i -lt 1; $i++){# Make sure loop starts from 0 and goes to number 
 	#Write-Host (Get-Date).ToString('MM/dd/yyyy hh:mm:ss tt') #time per loop
 	foreach ($name in $names){ #loop down the list of servers
 
-		$obj = Test-Connection -Count 1 -Delay 1 -BufferSize 1500 -ComputerName $name -ErrorAction SilentlyContinue -AsJob |Receive-Job -Wait
+		$obj = Test-Connection -Count 1 -Delay 1 -BufferSize 1500 -ComputerName $name -ErrorAction SilentlyContinue
 
 		if($obj){
    			$Output+= ($obj | Select -ExpandProperty "Responsetime")

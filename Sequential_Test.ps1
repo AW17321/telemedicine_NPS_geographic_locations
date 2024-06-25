@@ -10,15 +10,15 @@ for ($i = 0;  $i -lt 1; $i++){# Make sure loop starts from 0 and goes to number 
 		$obj = Test-Connection -Count 1 -Delay 1 -BufferSize 1500 -ComputerName $name -ErrorAction SilentlyContinue
 
 $Time+= (Get-Date -UFormat %s -Millisecond 0)
-Write-Host (Get-Date -UFormat %s -Millisecond 0)
+#Write-Host (Get-Date -UFormat %s -Millisecond 0)
 
 		if($obj){
    			$Output+= ($obj | Select -ExpandProperty "Responsetime")
-   			Write-Host ($obj | Select -ExpandProperty "Responsetime") #debug, write on terminal
+   			#Write-Host ($obj | Select -ExpandProperty "Responsetime") #debug, write on terminal
 		}
   		else{
    			$Output+= "0"
-    			Write-Host "0" #debug, write on terminal
+    			#Write-Host "0" #debug, write on terminal
   		}
 
 	}

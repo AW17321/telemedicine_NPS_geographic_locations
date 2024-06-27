@@ -6,7 +6,7 @@ pip3 install ping3
 Linux Ubuntu, using VS on Anaconda:
 python3 -m pip install ping3
 '''
-#Press Ctrl+C to end script when you feel like it. It should save to CSV
+print("Press Ctrl+C to end script when you feel like it. It should save to CSV")
 
 from tkinter.filedialog import askopenfilename
 from ping3 import ping #pinging stuff

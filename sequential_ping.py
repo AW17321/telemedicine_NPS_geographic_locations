@@ -21,9 +21,9 @@ with open(r"ServerPingOutput.CSV", "w+") as output_file:
         with open(r"servers.csv") as csv_file:
             csv_reader = csv.reader(csv_file)
             for name in csv_reader:
-                print(name[0]) #check server list
+                #print(name[0]) #check server list
                 rtt = ping(name[0], unit='ms',timeout=1)
                 currenttime = time.time()
-                print(rtt)  # Returns delay in seconds.
-                print( int(currenttime) )
+                #print(rtt)  # Returns delay in seconds.
+                #print( int(currenttime) )
                 output.writerow([name[0], rtt, currenttime])
